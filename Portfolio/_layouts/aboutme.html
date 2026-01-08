@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/aboutme.css">
+<title>{{ page.title }}</title>
+
+<body>
+
+  <main class="profile">
+
+    <section class="hard-skills">
+      <h2>Hard skills</h2>
+      <ul>
+        {% for skill in page.hard_skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="academic-background">
+      <h2>Academic background</h2>
+
+      {% for background in page.academic_background %}
+      <article class="background-item">
+        <h3>{{ background.degree }}</h3>
+        <p>Duration : {{ background.duration }}</p>
+        <p>Location : {{ background.location }}</p>
+
+        {% if background.description %}
+        <p>{{ background.description }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </section>
+
+    <section class="experiences">
+      <h2>Professional experiences</h2>
+
+      {% for exp in page.professional_Experience %}
+      <article class="experience-item">
+        <h3>{{ exp.Position }}</h3>
+        <p>Dates : {{ exp.Dates }}</p>
+        <p>Location : {{ exp.Location }}</p>
+        <p>{{ exp.Description }}</p>
+      </article>
+      {% endfor %}
+    </section>
+
+  </main>
+
+</body>
+
+</html>

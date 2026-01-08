@@ -1,0 +1,71 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/contact.css">
+
+<main class="page-content">
+    <h1>{{ page.title }}</h1>
+
+    {{ content }}
+
+    {% if page.forms %}
+    {% for form in page.forms %}
+    <form action="https://formspree.io/f/{{ form.form_id | default: 'YOUR_FORM_ID' }}" method="POST"
+        class="contact-form">
+
+        {% if form.subject %}
+        <input type="hidden" name="_subject" value="{{ form.subject }}">
+        {% endif %}
+
+        {% if form.redirect %}
+        <input type="hidden" name="_redirect" value="{{ form.redirect }}">
+        {% endif %}
+
+        {% for field in form.fields %}
+        {% if field.input_type != "submit" %}
+        <div class="form-group">
+            {% if field.input_type == "textarea" %}
+            <textarea name="{{ field.name }}" placeholder="{{ field.placeholder }}" {% if field.required %}required{%
+                endif %}></textarea>
+            {% else %}
+            <input type="{{ field.input_type }}" name="{{ field.name }}" placeholder="{{ field.placeholder }}" {% if
+                field.required %}required{% endif %}>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% for field in form.fields %}
+        {% if field.input_type == "submit" %}
+        <button type="submit">
+            {{ field.placeholder | default: "Envoyer" }}
+        </button>
+        {% endif %}
+        {% endfor %}
+
+    </form>
+    {% endfor %}
+    {% endif %}
+
+    <div class="contact-links">
+        <p>Contact me here :</p>
+
+        <ul>
+            <li>
+                <a href="https://github.com/OnyxXs" target="_blank" rel="noopener">
+                    GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/timeo-donnaes-developpeur-web-mobile/" target="_blank" rel="noopener">
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <p>
+                    timeo.donnaes@gmail.com
+                </p>
+            </li>
+        </ul>
+    </div>
+</main>

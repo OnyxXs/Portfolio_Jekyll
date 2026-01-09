@@ -1,5 +1,5 @@
 ---
-layout: /assets/projectsHTML/portfolio.html
+layout: portfolio
 title: "Portfolio"
 permalink: "/Portfolio/"
 ---

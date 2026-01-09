@@ -1,7 +1,7 @@
 ---
 layout: home
 title_big: PORTFOLIO
-avatar: /assets/Images/avata.png
+avatar: /assets/Images/avatar.png
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-layout: /assets/projectsHTML/klivio.html
+layout: klivio
 title: "Klivio"
 permalink: "/Klivio/"
 ---

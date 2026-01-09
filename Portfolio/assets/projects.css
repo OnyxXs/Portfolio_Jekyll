@@ -1,8 +1,12 @@
+body {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .project-card {
     text-decoration: none;
     color: inherit;
     display: block;
-    margin-bottom: 2rem; /* espace entre les cartes */
+    margin-bottom: 2rem;
 }
 
 .project {
